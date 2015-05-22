@@ -10,8 +10,8 @@ from typedattr.concurrent.event import EventLoop, on_event
 # value_change_error. Another possibility would be to raise an Exception
 class Person(object):
     name = Str('')    
-    length = Float(181.4, 0, 300)  # default-, min-, max-value
-    age = Int(0, 0, 150) # default-, min-, max-value
+    length = Float(181.4, 0, 300) 
+    age = Int(0, 0, 150)
 
     # Simple init
     def __init__(self, name, length, age):
@@ -38,6 +38,6 @@ if __name__ == '__main__':
     print p1.age.value()
 
     p1.age = 37
-    p1.age = 500
+    p1.age = 500 # Value outside of the permitted range
 
     EventLoop.process_events()
